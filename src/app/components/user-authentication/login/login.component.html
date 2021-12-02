@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <form class="form-container" [formGroup]="loginForm">
+        <div class="header">
+            LOGIN
+        </div>
+        <div class="input-fields">
+            <div class="form-group">
+                <label for="Email">Enter Email</label>
+                <input type="email" [class.is-invalid]="email && email.touched && email.invalid" class="form-control" formControlName="email" placeholder="Email" name="email" autocomplete="off">
+                <small class="text-danger" *ngIf="email && email.invalid && email.touched">{{getEmailError()}}</small>
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Enter Password</label>
+                <input type="password"  [class.is-invalid]="password && password.touched && password.invalid" class="form-control" formControlName="password" placeholder="Password" name="password">
+                <small class="text-danger" [class.d-none]="password && (password.valid || password.untouched)">{{getPasswordError()}}</small>
+            </div>
+            <a routerLink="/forgotPassword"><p>Forgot Password?</p></a>
+        </div>
+        
+        <div class="buttons">
+            <div>
+                <button class="btn btn-primary" type="submit" (click)="login()">Login</button>
+            </div>
+
+            <div class="signup">
+                <p>Do not have an account? Signup</p>
+                <a routerLink="/signup"><button class="btn btn-primary">Sign up</button></a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,47 @@
+.container-fluid {
+    position: absolute;
+    top: 5vh;
+}
+.header {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+label {
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.form-container {
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 35%;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.input-fields {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.buttons{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 30px 0px;
+}
+.buttons button {
+    width: 100%;
+    margin-top: 10px;
+}
+.login{
+    margin-top: 20px;
+}
+.login p{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}

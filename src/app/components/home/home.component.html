@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="home">
+        <div class="header">
+            HOME
+        </div>
+        <div class="details">
+            <p>Name : {{user?.name}}</p>
+            <p>Email : {{user?.email}}</p>
+            <p>password : {{password}}</p>
+            <button *ngIf="hidden" class="btn btn-secondary" (click)="showPassword()">Show Password</button>
+            <button *ngIf="!hidden" class="btn btn-secondary" (click)="hidePassword()">Hide Password</button>
+            <!-- <div *ngIf="hidden; else show">
+                <p>Password : {{"*".repeat(user?.password.length)}}</p>
+                <button class="btn btn-secondary" (click)="showPassword()">Show password</button>
+            </div>
+            <ng-template #show>
+                <p>Password : {{user?.password}}</p>
+                <button class="btn btn-secondary" (click)="hidePassword()">Hide password</button>
+            </ng-template> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <form class="form-container" [formGroup]="signupForm">
+        <div class="header">
+            SIGN UP
+        </div>
+        <div class="input-fields">
+            <div class="form-group">
+                <label for="Email">Enter name</label>
+                <input type="email" [class.is-invalid]="name && name.touched && name.invalid" class="form-control" formControlName="name" placeholder="Name" name="name" autocomplete="off">
+                <small class="text-danger" *ngIf="name && name.invalid && name.touched">Name is required</small>
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Enter Email</label>
+                <input type="email" [class.is-invalid]="email && email.touched && email.invalid" class="form-control" formControlName="email" placeholder="Email" name="email" autocomplete="off">
+                <small class="text-danger" *ngIf="email && email.invalid && email.touched">{{getEmailError()}}</small>
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Enter Password</label>
+                <input type="password"  [class.is-invalid]="password && password.touched && password.invalid" class="form-control" formControlName="password" placeholder="Password" name="password">
+                <small class="text-danger" [class.d-none]="password && (password.valid || password.untouched)">{{getPasswordError()}}</small>
+            </div>
+
+            <div class="form-group">
+                <label for="ConfirmPassword">Confirm Password</label>
+                <input type="password"  [class.is-invalid]="confirmPassword && confirmPassword.touched && confirmPassword.invalid" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password" name="Confirmpassword">
+                <small class="text-danger" [class.d-none]="confirmPassword && (confirmPassword.valid || confirmPassword.untouched)">{{getConfirmPasswordError()}}</small>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <div>
+                <button class="btn btn-primary" type="submit" (click)="signup()">Sign up</button>
+            </div>
+
+            <div class="login">
+                <p>Already have an account? Login</p>
+                <a routerLink="/login"><button class="btn btn-primary">Login</button></a>
+            </div>
+        </div>
+    </form>
+</div>
